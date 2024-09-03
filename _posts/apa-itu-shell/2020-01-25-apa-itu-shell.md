@@ -1,121 +1,121 @@
 ---
-title: What is a shell? 🐚 adalah kerang ajaib?
+title: What is a shell? 🐚 is it a magical shell?
 date: 2020-01-25 11:58:47 +07:00
 modified: 2020-02-02 16:49:47 +07:00
 tags: [unix/linux, cli]
-description: Shell adalah sebuah command-line interpreter; program yang berperan sebagai penerjemah perintah yang diinputkan oleh User yang melalui terminal, sehingga perintah tersebut bisa dimengerti oleh si Kernel.
+description: A shell is a command-line interpreter; a program that acts as a translator for commands inputted by the user through the terminal, so that the commands can be understood by the Kernel.
 image: "/apa-itu-shell/shell_evolution.png"
 ---
 
-<a href="http://www.youtube.com/watch?v=tc4ROCJYbm0&t=70" target="_blank" rel="noopener">Dulu</a> Sebelum adanya <abbr title="Graphical User Interface">GUI</abbr> cara user berinteraksi dengan komputer menggunakan <abbr title="Command Line Interface">CLI</abbr> yaitu mengetik baris perintah pada sebuah antarmuka dalam bentuk baris teks seperti 👇.
+<a href="http://www.youtube.com/watch?v=tc4ROCJYbm0&t=70" target="_blank" rel="noopener">In the past</a>, before the existence of a <abbr title="Graphical User Interface">GUI</abbr>, users interacted with computers using a <abbr title="Command Line Interface">CLI</abbr> by typing command lines in a text-based interface like this 👇.
 
 <figure>
 <img src="/apa-itu-shell/terminal_nginx.gif" alt="installing nginx in ubuntu">
-<figcaption>Fig 1. Terminal emulator, instalasi package dan check service.</figcaption>
+<figcaption>Fig 1. Terminal emulator, package installation, and service check.</figcaption>
 </figure>
 
-Jika kamu pernah menggunakan unix/linux mungkin pernah menggunakan program diatas, bahkan mungkin setiap hari menggunakannya untuk mengeksekusi suatu perintah melalui <a href="http://en.wikipedia.org/wiki/List_of_terminal_emulators" target="_blank" rel="noopener">terminal emulator</a>.
+If you have ever used Unix/Linux, you might have used the program above, and maybe even use it every day to execute a command through a <a href="http://en.wikipedia.org/wiki/List_of_terminal_emulators" target="_blank" rel="noopener">terminal emulator</a>.
 
-User<sup id="user">[[1]](#user-ref)</sup> tidak bisa secara langsung berkomunikasi dengan sebuah hardware komputer, maka dari itu kita membutuhkan sebuah sistem operasi; **Kernel** adalah program yang merupakan inti utama dari sistem operasi komputer.
+Users<sup id="user">[[1]](#user-ref)</sup> cannot directly communicate with computer hardware, so we need an operating system; the **Kernel** is a program that serves as the core of the computer's operating system.
 
 <figure>
 <img src="/apa-itu-shell/kernel.png" alt="kernel central of operating system">
-<figcaption>Fig 2. bagan kernel.</figcaption>
+<figcaption>Fig 2. Kernel diagram.</figcaption>
 </figure>
 
-Kernel memfasilitasi interaksi antara komponen perangkat keras dan perangkat lunak, berperan untuk menangani permintaan input/ouput dari perangkat lunak, selanjutnya menerjemahkannya ke dalam pemrosesan data untuk diintruksikan ke CPU, sehingga Hardware(cpu, memory, devices) mengerti perintah yang dimaksud dari pengguna.
+The Kernel facilitates the interaction between hardware and software components, handling input/output requests from software and translating them into data processing instructions for the CPU, so that the hardware (CPU, memory, devices) understands the user's intended commands.
 
-Ketika kita menginputkan suatu perintah pada terminal emulator, kernel tidak langsung mengerti perintah yang kita ketik, kita membutuhkan suatu interface sebagai perantara menuju kernel yaitu **Shell**.
+When we input a command in the terminal emulator, the kernel doesn't immediately understand the command we type. We need an interface as an intermediary to the kernel, and that interface is called the **Shell**.
 
 <figure>
 <img src="/apa-itu-shell/shell.png" alt="shell">
-<figcaption>Fig 3. bagan komunikasi shell.</figcaption>
+<figcaption>Fig 3. Shell communication diagram.</figcaption>
 </figure>
 
-<mark>Shell adalah sebuah command-line interpreter; program yang berperan sebagai penerjemah perintah yang diinputkan oleh User yang melalui terminal</mark>, sehingga perintah tersebut bisa dimengerti oleh si Kernel.
+<mark>A shell is a command-line interpreter; a program that acts as a translator for commands inputted by the user through the terminal</mark>, so that the commands can be understood by the Kernel.
 
-Login shell biasanya ditetapkan oleh local System Administrator ketika pada saat pertama user kamu dibuat, kamu bisa lihat login shell yang sedang kamu gunakan dengan perintah dibawah ini.
+The login shell is usually set by the local System Administrator when the user is first created. You can see the login shell you are currently using with the following command.
 
 ```bash
 $ echo $SHELL
-# atau
+# or
 $ echo $0
 ```
 
-Setiap shell mempunyai default prompt. beberapa shell yang paling umum:
+Each shell has a default prompt. Here are some of the most common shells:
 
 ```bash
 $ (dollar sign)   # sh, ksh, bash
 % (percent sign)  # csh, tcsh
 ```
 
-##### Terminologi pada shell prompt
+##### Terminology in shell prompt
 
-Shell prompt adalah tempat dimana kita menuliskan suatu perintah, berikut adalah terminologinya ini membantu, jika kamu ingin mengetahui bagian-bagianya.
+The shell prompt is where we write a command. Here are the terminologies that can help you understand its parts.
 
 <figure>
 <img src="/apa-itu-shell/term_shell_prompt.png" alt="shell">
-<figcaption>Fig 4. bagian-bagin dari shell prompt.</figcaption>
+<figcaption>Fig 4. Parts of a shell prompt.</figcaption>
 </figure>
 
-Dibawah ini salah satu contoh perintah sederhana untuk menampilkan sebuah arsitektur CPU komputer yang sedang saya gunakan.
+Below is an example of a simple command to display the CPU architecture of the computer I am currently using.
 
 <figure>
 <img src="/apa-itu-shell/terminal_lscpu.gif" alt="installing nginx in ubuntu">
-<figcaption>Fig 5. menampilkan informasi tentang arsitektur CPU.</figcaption>
+<figcaption>Fig 5. Displaying information about the CPU architecture.</figcaption>
 </figure>
 
-Dari perintah yang contohkan, ketika user mengetikan suatu inputan perintah di terminal dan menekan <kbd>ENTER</kbd>, maka shell akan mengubah perintah user menjadi bahasa yang bisa dipahami oleh kernel, dan Kernel menerjemahkannya ke dalam pemrosesan data untuk diintruksikan ke Hardware sehingga menghasilkan output yg sesuai dengan perintah user.
+From the example command, when a user types an input command in the terminal and presses <kbd>ENTER</kbd>, the shell will transform the user's command into a language that can be understood by the kernel. The kernel then translates it into data processing instructions for the hardware, resulting in the appropriate output based on the user's command.
 
-Shell mempunyai beberapa macam dan turunan, berikut yang paling umum.
+Shells have various types and derivatives. Here are some of the most common ones.
 
 <figure>
 <img src="/apa-itu-shell/shell_evolution.png" alt="shell evolution">
-<figcaption>Fig 6. evaluasi shell dari tahun ke tahun.</figcaption>
+<figcaption>Fig 6. Shell evolution over the years.</figcaption>
 </figure>
 
-Sedikit penjelasan dari gambar diatas.
+A brief explanation of the image above:
 
 - Bourne shell `sh`
-  Dikembangkan oleh Stephen Bourne di Bell Labs, yang kala itu sebagai pengganti Thompson shell(diciptakan Ken Thompson), banyak sistem unix-like tetap memiliki `/bin/sh`—yang mana menjadi symbolic link atau hard link, bahkan ketika shell lain yang digunakan tetap `sh` adalah sebagai dasarnya, sebagai kompatibilitas perintah.
-- Korn shell `ksh` Unix shell yang dikembangkan oleh David Korn di Bell Labs,
-  inisialiasi pengembangan ini berdasar pada source code Bourne shell, namun juga memiliki fitur `csh` dan `sh`, pengembanganya pun pada saat saya menulis ini pun terus <a href="http://github.com/att/ast" target="_blank" rel="noopener">terawat</a>.
+  Developed by Stephen Bourne at Bell Labs, which at the time replaced Thompson shell (created by Ken Thompson). Many Unix-like systems still have `/bin/sh`—which may be a symbolic link or hard link—pointing to it, even when other shells are used, as compatibility for commands.
+- Korn shell `ksh` Unix shell developed by David Korn at Bell Labs. The development is based on the source code of the Bourne shell, but it also has features from `csh` and `sh`. Its development is still actively maintained <a href="http://github.com/att/ast" target="_blank" rel="noopener">here</a>.
 - Bourne again shell `bash`
-  adalah proyek ini open source <a href="http://gnu.org/software/bash/" target="_blank" rel="noopener">GNU project</a> memilki kompatibel dengan `sh` yang menggabungkan fitur penting dari `ksh` dan `csh`, dan menjadi salah satu shell yang paling umum digunakan (umumnya menjadi default shell login Linux dan Apple's macOS Mojave).
-- Z shell `zsh` ini mempunyai wadah komunitasnya disebutnya <a href="http://ohmyz.sh/"  target="_blank" rel="noopener">"Oh My Zsh"</a>, plug-in dan theme `zsh` bisa kita temukan di komunitas ini, saya saat ini menggunakan `zsh`, shell ini juga menjadi default dari sistem operasi macOS Catalina, yang menggantikan bash.
+  This is an open-source project by the <a href="http://gnu.org/software/bash/" target="_blank" rel="noopener">GNU project</a>. It is compatible with `sh` and combines important features from `ksh` and `csh`. It is one of the most commonly used shells (usually the default login shell for Linux and Apple's macOS Mojave).
+- Z shell `zsh` has its own community called <a href="http://ohmyz.sh/"  target="_blank" rel="noopener">"Oh My Zsh"</a>. `zsh` plugins and themes can be found in this community. I am currently using `zsh`, which is also the default shell in macOS Catalina, replacing bash.
 - friendly interactive shell `fish`
-  yah sesuai dengan <a href="http://fishshell.com/" target="_blank" rel="noopener">deskripsi</a> di web nya, menurut saya shell ini fun banget, fitur yang saya sukai dari shell ini autosuggestions, dan konfigurasi yang mudah melalui web based.
+  As described on its <a href="http://fishshell.com/" target="_blank" rel="noopener">website</a>, this shell is fun. One feature I like about this shell is the autosuggestions and easy configuration through a web-based interface.
 
-Masih banyak yang belum dijelaskan pada tulisan ini jika masih tertarik, baca lebih <a href="http://en.wikipedia.org/wiki/List_of_command-line_interpreters#Operating_system_shells" target="_blank" rel="noopener">banyak</a> dan juga <a href="http://en.wikipedia.org/wiki/Comparison_of_command_shells" target="_blank" rel="noopener">komparasinya</a> masing-masing shell.
+There is still much more to explain in this article. If you are still interested, read more <a href="http://en.wikipedia.org/wiki/List_of_command-line_interpreters#Operating_system_shells" target="_blank" rel="noopener">here</a> and also compare each shell <a href="http://en.wikipedia.org/wiki/Comparison_of_command_shells" target="_blank" rel="noopener">here</a>.
 
-Jika kamu tertarik untuk mengubah default shell login pada sistem operasi, kamu bisa menginstall dengan cara mengikuti didokumentasi/cara penginstallan dimasing-masing shell disini saya tidak membahas karena distro yang kita pakai mungkin berbeda-beda.
+If you are interested in changing the default login shell in your operating system, you can install it by following the documentation/installation instructions for each shell. I won't cover it here because the distribution you are using may vary.
 
-Untuk menjadikan default shell login pada OS bisa menggunakan perintah ini.
+To set the default login shell in the OS, you can use this command.
 
 ```bash
 # command
 $ sudo chsh [options] [LOGIN]
 
-# contoh penggunaan
+# example usage
 $ sudo chsh -s /user/bin/zsh harpi
-# mengubah default shell user harpi menjadi zsh shell.
+# change the default shell for the user "harpi" to zsh shell.
 $ reboot
 
-# atau kamu juga bisa mengubah file /etc/passwd dan edit secara manual user shellnya.
-# jika masih bingung manfaatkan perintah man untuk melihat manual page.
+# or you can also manually edit the /etc/passwd file to change the user's shell.
+# If you are still confused, use the `man` command to view the manual page.
 $ man chsh
 ```
 
-Terakhir untuk tulisan ini, shell memilki berbagai macam, pilihlah shell yang sesuai dengan keinginanmu untuk menunjang produktivitas dan sesuaikan dengan kebutuhan, terlalu banyak plugin dan kebingungan memilih tema itu buruk 😁.
+Finally, for this article, shells have various types, so choose the shell that suits your preferences to enhance productivity and adjust it to your needs. Having too many plugins and being confused about choosing a theme is not good 😁.
 
-Terimakasih sudah baca, _penulis menerima kritik dan saran._
+Thank you for reading. _The author welcomes criticism and suggestions._
 
 ##### Notes
 
-<small id="user-ref"><sup>[[1]](#user)</sup> Manusia yang mengoperasikan dan mengendalikan sistem komputer.</small>
+<small id="user-ref"><sup>[[1]](#user)</sup> Humans who operate and control computer systems.</small>
 
 ##### Resources
 
 - [Evolution shells in Linux](http://developer.ibm.com/tutorials/l-linux-shells/)
-- [Kernel Defintion](http://www.linfo.org/kernel.html)
+- [Kernel Definition](http://www.linfo.org/kernel.html)
 - [The Shell](http://www.cis.rit.edu/class/simg211/unixintro/Shell.html)
+
