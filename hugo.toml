@@ -1,7 +1,49 @@
 baseURL = 'https://reztag.github.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = "Rez's Blog"
 
 [module]
   [[module.imports]]
     path = "github.com/hugo-sid/hugo-blog-awesome"
+
+# Enable emojis globally
+enableEmoji = true
+
+# set markup.highlight.noClasses=false to enable code highlight
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+
+#Adding menu buttons
+[menu]
+[[menu.main]]
+  pageRef = "home"
+  name = 'Home'
+  url = '/'
+  weight = 10
+[[menu.main]]
+  pageRef = "posts"
+  name = 'Posts'
+  url = '/posts/'
+  weight = 20
+[[menu.main]]
+  pageRef = "about"
+  name = 'About'
+  url = '/about/'
+  weight = 30
+
+[params]
+  sitename = "rez"
+  defaultColor = "auto" # set default color mode: dark or light
+  description = "Minimal Hugo blog theme with light and dark mode support"
+
+[params.author]
+  avatar = "avatar.jpg" # put the file in assets folder; also ensure that image has same height and width
+  # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
+  intro = "📒 Rez's Personal Blogsite"
+  name = "Rez"
+  description = "Finally set up! anyway I'm a CS student trying to get a foothold in binary digit machines."
+
+
