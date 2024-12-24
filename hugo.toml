@@ -1,7 +1,6 @@
 baseURL = 'https://reztag.github.io/'
 languageCode = 'en-us'
-title = "Rez's Blog"
-
+title = "Rez"
 [module]
   [[module.imports]]
     path = "github.com/hugo-sid/hugo-blog-awesome"
@@ -35,7 +34,7 @@ enableEmoji = true
   weight = 30
 
 [params]
-  sitename = "rez"
+  sitename = "Rez's blog"
   defaultColor = "auto" # set default color mode: dark or light
   description = "Minimal Hugo blog theme with light and dark mode support"
 

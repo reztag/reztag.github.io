@@ -1,6 +1,6 @@
 {
-    "name": "rez",
-    "short_name": "rez",
+    "name": "Rez's blog",
+    "short_name": "Rez's blog",
     "start_url": "http://localhost:1313/",
     "theme_color": "#434648",
     "background_color": "#ffffff",
