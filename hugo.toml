@@ -52,3 +52,14 @@ enableEmoji = true
   description = "Finally set up! anyway I'm a CS student trying to get a foothold in binary digit machines."
 
 
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/reztag"
+
+[[params.socialIcons]]
+name = "x"
+url = "https://twitter.com/reztag"
+
+[[params.socialIcons]]
+name = "Rss"
+url = "/index.xml"
