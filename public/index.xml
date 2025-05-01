@@ -74,7 +74,89 @@ I bought an iQoo Z9 (8GB variant), and oh my god it has been a trauma. I am real
       
       <guid>http://localhost:1313/resume/</guid>
       
-      <description>&lt;embed src= &#34;resume.pdf&#34; width= &#34;100%&#34; height= &#34;1000px&#34; type=&#34;application/pdf&#34; &gt;</description>
+      <description>&lt;div class=&#34;pdf-container&#34; id=&#34;pdf-container-7f03bf2bee7308ab175fed5a01ce53fd&#34;&gt;
+    &lt;div class=&#34;pdf-controls&#34;&gt;
+        &lt;a href=&#34;resume.pdf&#34; target=&#34;_blank&#34; class=&#34;pdf-download-btn&#34;&gt;
+            &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;16&#34; height=&#34;16&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;
+                &lt;path d=&#34;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&#34;&gt;&lt;/path&gt;
+                &lt;polyline points=&#34;15 3 21 3 21 9&#34;&gt;&lt;/polyline&gt;
+                &lt;line x1=&#34;10&#34; y1=&#34;14&#34; x2=&#34;21&#34; y2=&#34;3&#34;&gt;&lt;/line&gt;
+            &lt;/svg&gt;
+            Open in New Tab
+        &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;embed 
+        src=&#34;resume.pdf&#34; 
+        type=&#34;application/pdf&#34; 
+        width=&#34;100%&#34; 
+        height=&#34;100vh&#34;
+        title=&#34;PDF Document&#34;
+        aria-label=&#34;PDF document viewer&#34;
+        class=&#34;pdf-embed&#34;&gt;
+    &lt;p class=&#34;pdf-fallback&#34;&gt;Your browser doesn&#39;t support embedded PDFs. &lt;a href=&#34;resume.pdf&#34; target=&#34;_blank&#34;&gt;Click here to download the PDF&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+    .pdf-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 1rem 0;
+        position: relative;
+    }
+    .pdf-fallback {
+        display: none;
+    }
+    .pdf-controls {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+    }
+    .pdf-download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 10px;
+        background: transparent;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        text-decoration: none;
+        color: var(--color-text);
+        transition: all 0.2s ease;
+    }
+    .pdf-download-btn:hover {
+        background: var(--color-bg-secondary);
+        border-color: var(--color-text);
+    }
+    .pdf-embed {
+        height: 100vh;  
+    }
+    @media (max-width: 768px) {
+        .pdf-container .pdf-embed {
+            height: 100vh;  
+        }
+    }
+&lt;/style&gt;
+
+&lt;script&gt;
+    document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+        
+        if (window.location.pathname.includes(&#39;resume&#39;)) {
+            document.body.classList.add(&#39;resume-page&#39;);
+        }
+        
+        
+        const header = document.querySelector(&#39;.navbar&#39;) || document.querySelector(&#39;header&#39;);
+        if (header) {
+            const headerHeight = header.offsetHeight;
+            const container = document.querySelector(&#39;.pdf-container&#39;);
+            if (container) {
+                container.style.height = `calc(100vh - ${headerHeight}px)`;
+                container.style.top = `${headerHeight}px`;
+            }
+        }
+    });
+&lt;/script&gt;</description>
       
     </item>
     

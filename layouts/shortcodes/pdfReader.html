@@ -1,1 +1,83 @@
-<embed src= "{{ .Get 0 }}" width= "100%" height= "1000px" type="application/pdf" >
+<div class="pdf-container" id="pdf-container-{{ with .Get 0 }}{{ . | md5 }}{{ end }}">
+    <div class="pdf-controls">
+        <a href="{{ .Get 0 }}" target="_blank" class="pdf-download-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            Open in New Tab
+        </a>
+    </div>
+    <embed 
+        src="{{ .Get 0 }}" 
+        type="application/pdf" 
+        width="100%" 
+        height="100vh"
+        title="{{ if .Get 1 }}{{ .Get 1 }}{{ else }}PDF Document{{ end }}"
+        aria-label="PDF document viewer"
+        class="pdf-embed">
+    <p class="pdf-fallback">Your browser doesn't support embedded PDFs. <a href="{{ .Get 0 }}" target="_blank">Click here to download the PDF</a>.</p>
+</div>
+
+<style>
+    .pdf-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 1rem 0;
+        position: relative;
+    }
+    .pdf-fallback {
+        display: none;
+    }
+    .pdf-controls {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+    }
+    .pdf-download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 10px;
+        background: transparent;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        text-decoration: none;
+        color: var(--color-text);
+        transition: all 0.2s ease;
+    }
+    .pdf-download-btn:hover {
+        background: var(--color-bg-secondary);
+        border-color: var(--color-text);
+    }
+    .pdf-embed {
+        height: 100vh; /* Ensures the PDF spans the full viewport height */
+    }
+    @media (max-width: 768px) {
+        .pdf-container .pdf-embed {
+            height: 100vh; /* Maintain full height on smaller screens */
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add class to body when on resume page
+        if (window.location.pathname.includes('resume')) {
+            document.body.classList.add('resume-page');
+        }
+        
+        // Adjust container height based on actual header height
+        const header = document.querySelector('.navbar') || document.querySelector('header');
+        if (header) {
+            const headerHeight = header.offsetHeight;
+            const container = document.querySelector('.pdf-container');
+            if (container) {
+                container.style.height = `calc(100vh - ${headerHeight}px)`;
+                container.style.top = `${headerHeight}px`;
+            }
+        }
+    });
+</script>
