@@ -8,12 +8,19 @@ title = "Rez"
 # Enable emojis globally
 enableEmoji = true
 
+toc = false # set to false to disable table of contents 'globally'
+tocOpen = false # set to true to open table of contents by default
+
 # set markup.highlight.noClasses=false to enable code highlight
 [markup]
   [markup.highlight]
     noClasses = false
   [markup.goldmark.renderer]
     unsafe = true
+	[markup.tableOfContents]
+		startLevel = 2 # ToC starts from H2
+		endLevel = 4 # ToC ends at H4
+		ordered = false # generates <ul> instead of <ol>
 
 #Adding menu buttons
 [menu]
