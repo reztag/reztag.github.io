@@ -68,5 +68,9 @@ name = "x"
 url = "https://twitter.com/reztag"
 
 [[params.socialIcons]]
+name = "lastfm"
+url = "https://last.fm/user/eechie"
+
+[[params.socialIcons]]
 name = "Rss"
 url = "/index.xml"

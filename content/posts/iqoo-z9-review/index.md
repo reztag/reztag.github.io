@@ -2,7 +2,9 @@
 title: iQoo Z9 Review
 date: 2024-12-21 15:00:00 +05:30
 # tags: [iQoo]
-description: Why iQoo mobiles sucks.
+images:
+- tanjiro-iqoo.png
+description: Why iQoo mobiles sucks. 
 isStarred: true
 ---
 
