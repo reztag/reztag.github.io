@@ -11,8 +11,7 @@ isStarred: true
 <!-- {{< figure src="iqoo-angry.gif" title="Photo Title" alt="Photo Description" >}} --> 
 
 <figure style="text-align: center;">
-  <img src="iqoo-angry.gif" style="width: 40%; height: auto;">
-  <!-- <figcaption>Photo Title</figcaption> -->
+  <img src="tanjiro-iqoo.png" alt="DNS logs of my iQoo Z9" style="height: 100%; width: 80%;">
 </figure>
 
 <br>

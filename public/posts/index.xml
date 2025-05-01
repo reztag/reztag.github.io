@@ -25,15 +25,14 @@
       
       <guid>http://localhost:1313/posts/iqoo-z9-review/</guid>
       
-      <description>&lt;!-- &lt;figure&gt;&lt;img src=&#34;http://localhost:1313/posts/iqoo-z9-review/iqoo-angry.gif&#34;
+      <description>&lt;!-- &lt;figure&gt;&lt;img src=&#34;iqoo-angry.gif&#34;
     alt=&#34;Photo Description&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;Photo Title&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
  --&gt; 
 &lt;figure style=&#34;text-align: center;&#34;&gt;
-  &lt;img src=&#34;iqoo-angry.gif&#34; style=&#34;width: 40%; height: auto;&#34;&gt;
-  &lt;!-- &lt;figcaption&gt;Photo Title&lt;/figcaption&gt; --&gt;
+  &lt;img src=&#34;tanjiro-iqoo.png&#34; alt=&#34;DNS logs of my iQoo Z9&#34; style=&#34;height: 100%; width: 80%;&#34;&gt;
 &lt;/figure&gt;
 &lt;br&gt;
 &lt;div style=&#34;text-align: center; font-size: 1.2em;&#34;&gt;
