@@ -36,9 +36,9 @@ tocOpen = false # set to true to open table of contents by default
   weight = 20
 
 [[menu.main]]
-  pageRef = "resume"
+  pageRef = "resume/resume.pdf"
   name = 'Resume'
-  url = '/resume/'
+  url = '/resume/resume.pdf'
   weight = 30
 
 [[menu.main]]
