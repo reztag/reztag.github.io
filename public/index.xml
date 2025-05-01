@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rez</title>
+    <title>Home on Rez</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on Rez</description>
+    <description>Recent content in Home on Rez</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 24 Dec 2024 15:32:33 +0530</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
@@ -54,6 +54,17 @@ I bought an iQoo Z9 (8GB variant), and oh my god it has been a trauma. I am real
       <guid>http://localhost:1313/about/</guid>
       
       <description>&lt;p&gt;adawdwd&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>http://localhost:1313/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/resume/</guid>
+      
+      <description>&lt;embed src= &#34;resume.pdf&#34; width= &#34;100%&#34; height= &#34;1000px&#34; type=&#34;application/pdf&#34; &gt;</description>
       
     </item>
     
